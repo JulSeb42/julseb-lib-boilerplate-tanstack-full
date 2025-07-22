@@ -1,0 +1,10 @@
+@import "tailwindcss"; /* Although this is not required, it's useful to get Tailwind Intellisense */
+
+@theme {
+	--admin-nav-width: 200px;
+}
+
+body {
+	height: fit-content;
+	min-height: unset;
+}
