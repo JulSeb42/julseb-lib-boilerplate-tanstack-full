@@ -14,10 +14,7 @@ const Users: FC = () => {
 		if (!users) {
 			userService
 				.allUsers()
-				.then(res => {
-					setUsers(res.data)
-					console.log({ res })
-				})
+				.then(res => setUsers(res.data))
 				.catch(err => {
 					console.error(err)
 					setErrorMessage(err.response.data.message)

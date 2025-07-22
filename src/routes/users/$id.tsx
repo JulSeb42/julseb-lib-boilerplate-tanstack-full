@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { createFileRoute } from "@tanstack/react-router"
 import { Page, UserHeader, ErrorMessage } from "components"
+import { NotFoundPage } from "pages"
 import { userService } from "api"
 import type { IErrorMessage, User } from "types"
 
@@ -21,6 +22,8 @@ const User: FC = () => {
 				.finally(() => setIsLoading(false))
 		}
 	}, [user])
+
+	if (!user) return <NotFoundPage />
 
 	return (
 		<Page title="User" type="none" isLoading={isLoading}>

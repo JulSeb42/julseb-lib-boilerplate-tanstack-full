@@ -37,10 +37,7 @@ const ResetPassword: FC = () => {
 
 		authService
 			.resetPassword({ _id: id, password, resetToken: token })
-			.then(res => {
-				console.log({ res })
-				toast.success(res.data.message)
-			})
+			.then(res => toast.success(res.data.message))
 			.then(() => setTimeout(() => navigate({ to: "/login" })))
 			.catch(err => {
 				console.error(err)

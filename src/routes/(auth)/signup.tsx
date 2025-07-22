@@ -21,9 +21,9 @@ const Signup: FC = () => {
 	const navigate = useNavigate()
 
 	const [inputs, setInputs] = useState({
-		fullName: "Julien Sebag",
-		email: "julien.sebag@me.com",
-		password: "Password42",
+		fullName: "",
+		email: "",
+		password: "",
 	})
 	const [savePassword, setSavePassword] = useState(true)
 	const [validation, setValidation] = useState<{
@@ -49,7 +49,6 @@ const Signup: FC = () => {
 			validation.password !== undefined
 		) {
 			if (id === "fullName" && validation.fullName !== undefined) {
-				console.log("hello")
 				if (value.length) {
 					setValidation({ ...validation, fullName: true })
 				} else setValidation({ ...validation, fullName: false })
