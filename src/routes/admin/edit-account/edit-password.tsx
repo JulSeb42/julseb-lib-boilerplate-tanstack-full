@@ -76,7 +76,7 @@ const EditPassword: FC = () => {
 				buttonPrimary="Save"
 				buttonSecondary={{
 					content: "Cancel",
-					onClick: () => navigate({ to: "/my-account" }),
+					onClick: () => navigate({ to: "/admin/edit-account" }),
 				}}
 				onSubmit={handleSubmit}
 				isLoading={isLoading}

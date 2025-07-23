@@ -1,8 +1,7 @@
 import { createFileRoute, Link, Navigate } from "@tanstack/react-router"
 import { Text } from "@julseb-lib/react"
 import { Page } from "components"
-import { EditAccountForm } from "./-forms/edit-account-form"
-import { DeleteAccount } from "./-forms/delete-account"
+import { EditAccountForm, DeleteAccount } from "./-forms"
 import { useAuth } from "context"
 
 const EditAccount: FC = () => {

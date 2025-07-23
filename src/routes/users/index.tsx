@@ -45,10 +45,6 @@ const Users: FC = () => {
 	)
 }
 
-type UsersPages = {
-	page?: number | null
-}
-
 export const Route = createFileRoute("/users/")({
 	component: Users,
 	validateSearch: (search: Record<string, unknown>): UsersPages => {
@@ -56,3 +52,7 @@ export const Route = createFileRoute("/users/")({
 	},
 	loaderDeps: ({ search: { page } }) => ({ page }),
 })
+
+type UsersPages = {
+	page?: number | null
+}
