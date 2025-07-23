@@ -1,5 +1,5 @@
 {
-	"name": "julseb-lib-boilerplate-fullstack",
+	"name": "julseb-lib-boilerplate-fullstack-client",
 	"private": true,
 	"type": "module",
 	"scripts": {
