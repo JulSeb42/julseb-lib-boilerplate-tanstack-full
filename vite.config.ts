@@ -13,7 +13,4 @@ export default defineConfig({
 		tailwindcss(),
 		tsconfigPaths(),
 	],
-	server: {
-		proxy: { "/api": process.env.VITE_API_URL ?? "" },
-	},
 })

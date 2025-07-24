@@ -85,6 +85,8 @@ const Users: FC = () => {
 							user={user}
 							users={users}
 							setUsers={setUsers as any}
+							currentPage={Number(page)}
+							paginatedData={paginatedData}
 							key={user._id}
 						/>
 					))}

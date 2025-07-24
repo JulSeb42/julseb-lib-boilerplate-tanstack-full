@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "@tanstack/react-router"
+import { Link, useNavigate } from "@tanstack/react-router"
 import { BiDotsHorizontalRounded } from "react-icons/bi"
 import {
 	clsx,
@@ -23,7 +23,10 @@ export const UserCardAdmin: FC<IUserCardAdmin> = ({
 	user,
 	users,
 	setUsers,
+	currentPage,
+	paginatedData,
 }) => {
+	const navigate = useNavigate()
 	const { user: admin } = useAuth()
 
 	const [isOpen, setIsOpen] = useState(false)
@@ -66,6 +69,14 @@ export const UserCardAdmin: FC<IUserCardAdmin> = ({
 			.then(res => {
 				toast.success(res.data.message)
 				setUsers(users.filter(u => u._id !== user._id))
+			})
+			.then(() => {
+				if (!paginatedData.filter(u => u._id !== user._id).length) {
+					navigate({
+						to: "/admin/users",
+						search: { page: currentPage - 1 },
+					})
+				}
 			})
 			.catch(err => {
 				toast.error("An error occurred, check console")
