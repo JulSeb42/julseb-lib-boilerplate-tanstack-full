@@ -2,9 +2,10 @@
 
 /** @type {import('prettier').Config} */
 const config = {
-  semi: false,
-  singleQuote: true,
-  trailingComma: "all",
-};
+	semi: false,
+	singleQuote: true,
+	trailingComma: "all",
+}
 
-export default config;
+// eslint-disable-next-line
+export default config
